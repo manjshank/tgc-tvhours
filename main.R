@@ -5,7 +5,9 @@ gss_cat
 gss_cat %>%
   group_by(marital) %>%
   summarise(mean_tv_hours = mean(tvhours, na.rm = T))
+
 tv_hours_table <- gss_cat %>%
+  filter(age >= 30) %>% 
   group_by(marital) %>%
   summarise(mean_tv_hours = mean(tvhours, na.rm = T))
 
